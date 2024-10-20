@@ -34,7 +34,7 @@ class AddExpenseView(APIView):
         participants = request.data.get("participants") # Array of Participants
         splits = request.data.get("splits", None)
 
-        # Validate the fields
+        # Validate the all fields
         if not amount or not description or not split_method or not participants:
             return Response({"error": "Missing required fields."}, status=status.HTTP_400_BAD_REQUEST)
 
